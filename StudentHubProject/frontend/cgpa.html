@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CGPA Calculator - StudentHub</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+  <nav class="navbar">
+
+    <div class="logo">
+      StudentHub
+    </div>
+
+    <ul class="nav-links">
+
+      <li><a href="index.html">Home</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li id="userArea"></li>
+
+    </ul>
+
+  </nav>
+
+</header>
+
+<!-- CALCULATOR -->
+
+<section class="calculator-section">
+
+  <h1>CGPA Calculator</h1>
+
+  <p>
+    Enter your subject grades below.
+  </p>
+
+  <div class="calculator-box">
+
+    <input type="number" id="sub1" placeholder="Subject 1 GPA">
+
+    <input type="number" id="sub2" placeholder="Subject 2 GPA">
+
+    <input type="number" id="sub3" placeholder="Subject 3 GPA">
+
+    <input type="number" id="sub4" placeholder="Subject 4 GPA">
+
+    <input type="number" id="sub5" placeholder="Subject 5 GPA">
+
+    <button onclick="calculateCGPA()">
+      Calculate CGPA
+    </button>
+
+    <h2 id="result">
+      Your CGPA: 0
+    </h2>
+
+  </div>
+
+</section>
+
+<script>
+
+function calculateCGPA(){
+
+  let s1 = Number(document.getElementById("sub1").value);
+  let s2 = Number(document.getElementById("sub2").value);
+  let s3 = Number(document.getElementById("sub3").value);
+  let s4 = Number(document.getElementById("sub4").value);
+  let s5 = Number(document.getElementById("sub5").value);
+
+  let total = s1 + s2 + s3 + s4 + s5;
+
+  let cgpa = total / 5;
+
+  document.getElementById("result").innerText =
+  "Your CGPA: " + cgpa.toFixed(2);
+
+}
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

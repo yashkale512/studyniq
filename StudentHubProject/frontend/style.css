@@ -1,0 +1,475 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0f172a;
+  color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 8%;
+  background:#1e293b;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:700;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#3b82f6;
+}
+
+/* HERO */
+
+.hero{
+  min-height:80vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.hero h1{
+  font-size:60px;
+  max-width:900px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:18px;
+  max-width:700px;
+  margin-bottom:30px;
+  color:#cbd5e1;
+}
+
+/* SEARCH */
+
+.search-box{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+
+.search-box input{
+  width:400px;
+  padding:15px;
+  border:none;
+  border-radius:12px;
+  outline:none;
+  font-size:16px;
+}
+
+.search-box button{
+  padding:15px 25px;
+  border:none;
+  border-radius:12px;
+  background:#3b82f6;
+  color:white;
+  cursor:pointer;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.search-box button:hover{
+  background:#2563eb;
+}
+
+/* FEATURES */
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:80px 8%;
+}
+
+.card{
+  background:#1e293b;
+  padding:40px;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card h2{
+  margin-bottom:15px;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:#1e293b;
+  margin-top:50px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+  .navbar{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .search-box{
+    flex-direction:column;
+    width:100%;
+  }
+
+  .search-box input{
+    width:100%;
+  }
+
+}
+
+/* PAGE TITLE */
+
+.page-title{
+  text-align:center;
+  padding:80px 20px 40px;
+}
+
+.page-title h1{
+  font-size:50px;
+  margin-bottom:15px;
+}
+
+.page-title p{
+  color:#cbd5e1;
+}
+
+/* FILTER SECTION */
+
+.filter-section{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  padding:30px 20px;
+}
+
+.filter-section input,
+.filter-section select{
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  font-size:16px;
+  outline:none;
+}
+
+/* NOTES GRID */
+
+.notes-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  padding:50px 8%;
+}
+
+.note-card{
+  background:#1e293b;
+  padding:30px;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.note-card:hover{
+  transform:translateY(-8px);
+}
+
+.note-card h2{
+  margin-bottom:15px;
+}
+
+.note-card p{
+  margin-bottom:20px;
+  color:#cbd5e1;
+}
+
+.note-card button{
+  padding:12px 20px;
+  border:none;
+  border-radius:10px;
+  background:#3b82f6;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.note-card button:hover{
+  background:#2563eb;
+}
+
+/* TOOLS PAGE */
+
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  padding:50px 8%;
+}
+
+.tool-card{
+  background:#1e293b;
+  padding:35px;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.tool-card:hover{
+  transform:translateY(-8px);
+}
+
+.tool-card h2{
+  margin-bottom:15px;
+}
+
+.tool-card p{
+  color:#cbd5e1;
+  margin-bottom:25px;
+}
+
+.tool-card button{
+  padding:12px 22px;
+  border:none;
+  border-radius:10px;
+  background:#3b82f6;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.tool-card button:hover{
+  background:#2563eb;
+}
+
+/* CALCULATOR */
+
+.calculator-section{
+  min-height:80vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:50px 20px;
+}
+
+.calculator-section h1{
+  font-size:50px;
+  margin-bottom:15px;
+}
+
+.calculator-section p{
+  color:#cbd5e1;
+  margin-bottom:30px;
+}
+
+.calculator-box{
+  background:#1e293b;
+  padding:40px;
+  border-radius:20px;
+  width:100%;
+  max-width:500px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.calculator-box input{
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  outline:none;
+  font-size:16px;
+}
+
+.calculator-box button{
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  background:#3b82f6;
+  color:white;
+  cursor:pointer;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.calculator-box button:hover{
+  background:#2563eb;
+}
+
+#result{
+  text-align:center;
+  margin-top:10px;
+}
+
+/* UPLOAD PAGE */
+
+.upload-section{
+  min-height:80vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:50px 20px;
+}
+
+.upload-section h1{
+  font-size:50px;
+  margin-bottom:15px;
+}
+
+.upload-section p{
+  color:#cbd5e1;
+  margin-bottom:30px;
+}
+
+.upload-box{
+  background:#1e293b;
+  padding:40px;
+  border-radius:20px;
+  width:100%;
+  max-width:600px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.upload-box input,
+.upload-box select,
+.upload-box textarea{
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  outline:none;
+  font-size:16px;
+}
+
+.upload-box button{
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  background:#3b82f6;
+  color:white;
+  cursor:pointer;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.upload-box button:hover{
+  background:#2563eb;
+}
+
+/* LOGIN PAGE */
+
+.login-section{
+  min-height:80vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:50px 20px;
+}
+
+.login-section h1{
+  font-size:50px;
+  margin-bottom:15px;
+}
+
+.login-section p{
+  color:#cbd5e1;
+  margin-bottom:30px;
+}
+
+.login-box{
+  background:#1e293b;
+  padding:40px;
+  border-radius:20px;
+  width:100%;
+  max-width:500px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.login-box input{
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  outline:none;
+  font-size:16px;
+}
+
+.login-box button{
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  background:#3b82f6;
+  color:white;
+  cursor:pointer;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.login-box button:hover{
+  background:#2563eb;
+}
+
+#loginMessage{
+  text-align:center;
+}
+
+/* USER SESSION */
+
+.welcome-user{
+  color:#3b82f6;
+  font-weight:600;
+}
+
+.logout-btn{
+  padding:8px 14px;
+  border:none;
+  border-radius:8px;
+  background:#ef4444;
+  color:white;
+  cursor:pointer;
+  margin-left:10px;
+}

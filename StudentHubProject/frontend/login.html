@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login - StudentHub</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+  <nav class="navbar">
+
+    <div class="logo">
+      StudentHub
+    </div>
+
+    <ul class="nav-links">
+
+      <li><a href="index.html">Home</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li><a href="upload.html">Upload</a></li>
+      <li id="loginNav">
+          <a href="login.html">Login</a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+</header>
+
+<!-- LOGIN SECTION -->
+
+<section class="login-section">
+
+  <h1>Student Login</h1>
+
+  <p>
+    Login or create account to continue.
+  </p>
+
+  <div class="login-box">
+
+    <input
+    type="text"
+    id="username"
+    placeholder="Enter Username">
+
+    <input
+    type="password"
+    id="password"
+    placeholder="Enter Password">
+
+    <button onclick="loginUser()">
+      Login
+    </button>
+
+    <button onclick="registerUser()">
+      Register
+    </button>
+
+    <h3 id="loginMessage"></h3>
+
+  </div>
+
+</section>
+
+<script>
+
+function registerUser(){
+
+  let username =
+  document.getElementById("username").value;
+
+  let password =
+  document.getElementById("password").value;
+
+  localStorage.setItem("studentUsername", username);
+
+  localStorage.setItem("studentPassword", password);
+
+  document.getElementById("loginMessage").innerText =
+  "Registration Successful";
+
+}
+
+function loginUser(){
+
+  let username =
+  document.getElementById("username").value;
+
+  let password =
+  document.getElementById("password").value;
+
+  let savedUsername =
+  localStorage.getItem("studentUsername");
+
+  let savedPassword =
+  localStorage.getItem("studentPassword");
+
+  if(
+    username === savedUsername &&
+    password === savedPassword
+  ){
+
+    document.getElementById("loginMessage").innerText =
+    "Login Successful";
+
+  }
+  else{
+
+    document.getElementById("loginMessage").innerText =
+    "Invalid Username or Password";
+
+  }
+
+}
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

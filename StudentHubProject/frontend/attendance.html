@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Attendance Calculator - StudentHub</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+  <nav class="navbar">
+
+    <div class="logo">
+      StudentHub
+    </div>
+
+    <ul class="nav-links">
+
+      <li><a href="index.html">Home</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li id="userArea"></li>
+
+    </ul>
+
+  </nav>
+
+</header>
+
+<!-- ATTENDANCE CALCULATOR -->
+
+<section class="calculator-section">
+
+  <h1>Attendance Calculator</h1>
+
+  <p>
+    Calculate attendance percentage instantly.
+  </p>
+
+  <div class="calculator-box">
+
+    <input type="number" id="totalClasses" placeholder="Total Classes">
+
+    <input type="number" id="attendedClasses" placeholder="Attended Classes">
+
+    <button onclick="calculateAttendance()">
+      Calculate Attendance
+    </button>
+
+    <h2 id="attendanceResult">
+      Attendance: 0%
+    </h2>
+
+    <h3 id="lectureNeed">
+      Required Classes: 0
+    </h3>
+
+  </div>
+
+</section>
+
+<script>
+
+function calculateAttendance(){
+
+  let total =
+  Number(document.getElementById("totalClasses").value);
+
+  let attended =
+  Number(document.getElementById("attendedClasses").value);
+
+  if(total <= 0){
+
+    alert("Enter valid total classes");
+
+    return;
+  }
+
+  let percentage =
+  (attended / total) * 100;
+
+  document.getElementById("attendanceResult").innerText =
+  "Attendance: " + percentage.toFixed(2) + "%";
+
+  let needed = 0;
+
+  while(((attended + needed) / (total + needed)) * 100 < 75){
+
+    needed++;
+
+  }
+
+  document.getElementById("lectureNeed").innerText =
+  "Required Classes For 75%: " + needed;
+
+}
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

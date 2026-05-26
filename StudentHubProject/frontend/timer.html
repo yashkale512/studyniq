@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Study Timer - StudentHub</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+  <nav class="navbar">
+
+    <div class="logo">
+      StudentHub
+    </div>
+
+    <ul class="nav-links">
+
+      <li><a href="index.html">Home</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li id="loginNav">
+          <a href="login.html">Login</a>
+      </li>
+      <li id="userArea"></li>
+
+    </ul>
+
+  </nav>
+
+</header>
+
+<!-- TIMER -->
+
+<section class="calculator-section">
+
+  <h1>Study Timer</h1>
+
+  <p>
+    Stay focused and improve productivity.
+  </p>
+
+  <div class="calculator-box">
+
+    <h2 id="timerDisplay">
+      25:00
+    </h2>
+
+    <button onclick="startTimer()">
+      Start
+    </button>
+
+    <button onclick="pauseTimer()">
+      Pause
+    </button>
+
+    <button onclick="resetTimer()">
+      Reset
+    </button>
+
+  </div>
+
+</section>
+
+<script>
+
+let time = 1500;
+
+let timer;
+
+function updateDisplay(){
+
+  let minutes = Math.floor(time / 60);
+
+  let seconds = time % 60;
+
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+
+  document.getElementById("timerDisplay").innerText =
+  minutes + ":" + seconds;
+
+}
+
+function startTimer(){
+
+  if(timer){
+
+    return;
+
+  }
+
+  timer = setInterval(() => {
+
+    if(time > 0){
+
+      time--;
+
+      updateDisplay();
+
+    }
+    else{
+
+      clearInterval(timer);
+
+      alert("Study Session Complete!");
+
+    }
+
+  },1000);
+
+}
+
+function pauseTimer(){
+
+  clearInterval(timer);
+
+  timer = null;
+
+}
+
+function resetTimer(){
+
+  clearInterval(timer);
+
+  timer = null;
+
+  time = 1500;
+
+  updateDisplay();
+
+}
+
+updateDisplay();
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
